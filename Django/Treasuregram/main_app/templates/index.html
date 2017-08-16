@@ -1,0 +1,36 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href = "{% static 'bootstrap.min.css %}"
+          rel = "stylesheet">
+    <link rel = "stylesheet" type="text/css"
+          href="{% static 'style.css' %}"/>
+    <title>TreasureGram</title>
+</head>
+<body>
+
+    <nav class = "navbar navbar-default navbar-static-top text-center">
+        <a href = "/">
+            <img src = "{% static 'images/logo.png' %}" alt = "TreasureGram">
+        </a>
+    </nav>
+
+    <main>
+    <div class = "panel-body">
+        <h1>TreasureGram</h1>
+        {% for treasure in treasures %}
+        <p>{{ treasure.name }}</p>
+            {% if treasure.value > 0 %}
+            <p>{{ treasure.value}}</p>
+            {%else%}
+            <p>Unknown</p>
+            {%endif%}
+        {% endfor %}
+    </div>
+    </main>
+
+</body>
+</html>

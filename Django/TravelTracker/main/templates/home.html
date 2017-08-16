@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TravelTracker</title>
+</head>
+<body>
+    <h1>TravelTracker</h1>
+    {% for location in locations %}
+        <p>{{location.name}}</p>
+        <p>{{location.predators}}</p>
+        <img src ="{{location.img_url}}" width = "80"/>
+    {%endfor%}
+
+
+
+</body>
+</html>
